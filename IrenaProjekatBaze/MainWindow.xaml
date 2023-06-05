@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IrenaProjekatBaze"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Projekat BP2 Irena" Height="450" Width="531" FontFamily="Copperplate Gothic Light" FontSize="18">
+
+    <Grid Margin="0,10,0,-61">
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/logo3.png" Opacity="0.8" Stretch="Fill"/>
+        </Grid.Background>
+        <Label Content="Username:" HorizontalAlignment="Left" Height="36" Margin="46,44,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Height="36" Margin="45,90,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="202,47,0,0" TextWrapping="Wrap" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="224"/>
+        <TextBox HorizontalAlignment="Left" FontFamily="MT Extra" Height="30" Margin="204,87,0,0" TextWrapping="Wrap" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="224"/>
+        <Button Content="Log in" Command="{Binding LogInCommand}" HorizontalAlignment="Left" Height="34" Margin="190,132,0,0" VerticalAlignment="Top" Width="156"/>
+        <Button Margin="68,178,313,290" FontSize="8" Command="{Binding GuestCommand}" Content="Continue without account!" Cursor="Hand"/>
+
+        <Button Margin="313,176,68,292" FontSize="8" Command="{Binding OpenCACommand}" Content="Don't have account? Create one!" Cursor="Hand"/>
+
+
 
     </Grid>
 </Window>
