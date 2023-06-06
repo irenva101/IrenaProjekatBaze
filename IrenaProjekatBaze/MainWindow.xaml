@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Projekat BP2 Irena" Height="450" Width="531" FontFamily="Copperplate Gothic Light" FontSize="18">
 
-    <Grid Margin="0,10,0,-61">
+    <Grid x:Name="myGrid" Margin="0,10,0,-4" >
         <Grid.Background>
-            <ImageBrush ImageSource="Images/logo3.png" Opacity="0.8" Stretch="Fill"/>
+            <ImageBrush ImageSource="Images/logo3.png" Opacity="0.8"/>
         </Grid.Background>
         <Label Content="Username:" HorizontalAlignment="Left" Height="36" Margin="46,44,0,0" VerticalAlignment="Top" Width="114"/>
         <Label Content="Password:" HorizontalAlignment="Left" Height="36" Margin="45,90,0,0" VerticalAlignment="Top" Width="116"/>

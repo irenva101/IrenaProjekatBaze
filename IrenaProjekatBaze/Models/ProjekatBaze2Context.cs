@@ -22,6 +22,8 @@ public partial class ProjekatBaze2Context : DbContext
 
     public virtual DbSet<Kombi> Kombis { get; set; }
 
+    public virtual DbSet<Korisnik> Korisniks { get; set; }
+
     public virtual DbSet<Putnik> Putniks { get; set; }
 
     public virtual DbSet<Rezervacija> Rezervacijas { get; set; }
@@ -40,7 +42,7 @@ public partial class ProjekatBaze2Context : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["ProjekatBaze2ConnectionString"].ConnectionString);
+        => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["ProjekatBaza2ConnectionString"].ConnectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -96,6 +98,34 @@ public partial class ProjekatBaze2Context : DbContext
                 .HasForeignKey<Kombi>(d => d.VoziloId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("KOMBI_VOZILO_FK");
+        });
+
+        modelBuilder.Entity<Korisnik>(entity =>
+        {
+            entity.HasKey(e => e.Username).HasName("KORISNIK_PK");
+
+            entity.ToTable("KORISNIK");
+
+            entity.Property(e => e.Username)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .IsFixedLength();
+            entity.Property(e => e.Ime)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .IsFixedLength();
+            entity.Property(e => e.Jmbg)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .IsFixedLength();
+            entity.Property(e => e.Password)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .IsFixedLength();
+            entity.Property(e => e.Prezime)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .IsFixedLength();
         });
 
         modelBuilder.Entity<Putnik>(entity =>

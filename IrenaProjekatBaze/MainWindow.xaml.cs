@@ -24,8 +24,12 @@ namespace IrenaProjekatBaze
     {
         public MainWindow()
         {
+            const string imagePath = "Images/logo3.png";
+            ImageBrush imageBrush = new ImageBrush(new BitmapImage(new Uri(imagePath, UriKind.Relative)));
             InitializeComponent();
-            DataContext = new MainWindowModel() { Window = this };
+            DataContext = new MainWindowViewModel() { Window = this };
+            myGrid.Background = imageBrush;
+            
         }
     }
 }
