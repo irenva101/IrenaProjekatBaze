@@ -1,8 +1,11 @@
 ﻿using IrenaProjekatBaze.Command;
 using IrenaProjekatBaze.Models;
 using IrenaProjekatBaze.View;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,7 +43,9 @@ namespace IrenaProjekatBaze.ViewModel
         }
         public void LogIn()
         {
-            using (var db = new ProjekatBaze2Context())
+            var optionBuilder = new DbContextOptionsBuilder<ProjekatBaze2Context>();
+            optionBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["ProjekatBaze2ConnectionString"].ConnectionString);
+            using (var db = new ProjekatBaze2Context(optionBuilder.Options))
             {
                 //List<Korisnik> lk = db.Korisniks.ToList();
                 Korisnik k = db.Korisniks.FirstOrDefault(x => x.Username == Username);

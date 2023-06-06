@@ -16,9 +16,9 @@
         <TextBox HorizontalAlignment="Left" Height="30" Margin="202,47,0,0" TextWrapping="Wrap" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="224"/>
         <TextBox HorizontalAlignment="Left" FontFamily="MT Extra" Height="30" Margin="204,87,0,0" TextWrapping="Wrap" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="224"/>
         <Button Content="Log in" Command="{Binding LogInCommand}" HorizontalAlignment="Left" Height="34" Margin="190,132,0,0" VerticalAlignment="Top" Width="156"/>
-        <Button Margin="68,178,313,290" FontSize="8" Command="{Binding GuestCommand}" Content="Continue without account!" Cursor="Hand"/>
+        <Button Margin="74,176,307,225" FontSize="8" Command="{Binding GuestCommand}" Content="Continue without account!" Cursor="Hand"/>
 
-        <Button Margin="313,176,68,292" FontSize="8" Command="{Binding OpenCACommand}" Content="Don't have account? Create one!" Cursor="Hand"/>
+        <Button Margin="322,177,65,225" FontSize="8" Command="{Binding OpenCACommand}" Content="Don't have account? Create one!" Cursor="Hand"/>
 
 
 

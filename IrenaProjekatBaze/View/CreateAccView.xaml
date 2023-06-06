@@ -24,6 +24,6 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="167,114,0,0" TextWrapping="Wrap" Text="{Binding JMBG, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="223"/>
 
         <Button Content="Create Account" Command="{Binding CreateAccCommand}" HorizontalAlignment="Left" Height="34" Margin="182,156,0,0" VerticalAlignment="Top" Width="176"/>
-
+        
     </Grid>
 </Window>
